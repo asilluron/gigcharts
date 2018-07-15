@@ -7,7 +7,7 @@ const INSTRUMENTS = ['bass', 'sax', 'guitar', 'drums', 'keys', 'trumpet', 'tromb
 // Async/Await:
 async function readConfig () {
   try {
-    const setConfig = await fse.readJson('./chehalem.json')
+    const setConfig = await fse.readJson('./whiteeagle.json')
     return setConfig;
   } catch (err) {
     console.error(err)
@@ -31,6 +31,9 @@ function processInstruments(files, final) {
   INSTRUMENTS.forEach(i => {
     let re;
     switch(i){
+    	case 'drums':
+        re = /drums|drum/ig;
+        break;
       case 'keys':
         re = /keys|key|piano/ig;
         break;
@@ -51,7 +54,9 @@ function processInstruments(files, final) {
   });
 
   if (final) {
-    printPdfs(printFilenames('sax', byInstrument['sax']));
+  	INSTRUMENTS.forEach(i => {
+  		printPdfs(printFilenames(i, byInstrument[i]));
+  	});
   }
 }
 

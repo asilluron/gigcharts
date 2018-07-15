@@ -1,0 +1,23 @@
+{
+  "name": "gigcharts",
+  "version": "1.0.0",
+  "description": "Compbine PDF charts for gigs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asilluron/gigcharts.git"
+  },
+  "author": "Andrew Silluron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asilluron/gigcharts/issues"
+  },
+  "homepage": "https://github.com/asilluron/gigcharts#readme",
+  "dependencies": {
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2"
+  }
+}
